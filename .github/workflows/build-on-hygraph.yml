@@ -1,0 +1,15 @@
+name: Rebuild on Hygraph Content Change
+
+on:
+  repository_dispatch:
+    types: [hygraph-content-change]
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Example Step
+        run: echo "Hygraph triggered this GitHub Action!"
