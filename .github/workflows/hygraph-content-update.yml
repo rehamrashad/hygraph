@@ -1,0 +1,19 @@
+name: Hygraph Content Update
+
+on:
+  repository_dispatch:
+    types: [hygraph_content_change]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Build Script
+        run: |
+          echo "Running site build triggered by Hygraph content change..."
+          # Replace below with your actual build/deploy steps
+          npm install
+          npm run build
